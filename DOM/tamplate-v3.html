@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+  <p>{{ titulo }}</p>
+  <p>{{ suadacao() }}</p>
+  
+</div>
+
+<script>
+  new Vue({ 
+    el: '#app',
+    data: {
+      titulo: 'Usando Vue.js'
+    },
+    methods: {
+      suadacao() {
+        console.log(this.$el)
+        return this.titulo
+      }
+      // o This, dentro da instancia do Vue, direciona para estados e funções dentro do VUE.
+      // não pode ter um dado e uma função com o mesmo nome, vai causar conflito
+    }
+  })
+</script>
