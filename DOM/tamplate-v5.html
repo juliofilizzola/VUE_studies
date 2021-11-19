@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+  <p v-once>{{ titulo }}</p>
+  <p>{{ suadacao() }}</p>
+  <a v-bind:href="link">Google</a>
+  
+</div>
+
+<script>
+  new Vue({ 
+    el: '#app',
+    data: {
+      titulo: 'Usando Vue.js',
+      link: 'http://google.com.br'
+    },
+    methods: {
+      suadacao() {
+        this.titulo = 'Bom dia';
+        return this.titulo
+        // por padrão quando o dado é atualizado o VUE também faz o atualiza a pagina.
+        // v-once vai fazer que o vue só atualize uma vez
+      }
+    }
+  })
+</script>
