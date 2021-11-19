@@ -7,6 +7,9 @@
     Mouse: {{x}} e {{y}}
     <span v-on:mousemove.stop="">PARA AQUI!!!!</span>
   </p>
+  <a v-on:onclick.prevent="" v-bind:href="http://google.com">Google</a>
+
+  
 </div>
 
 <script>
@@ -35,6 +38,7 @@
       utilizamos o stopPropagation
 
       mas também utlizanos o stop na diretiva utilizada.
+      o mesmo acontece com o prevent
       */
     }
   })
