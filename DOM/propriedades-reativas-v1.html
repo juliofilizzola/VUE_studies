@@ -2,9 +2,10 @@
 
 <div id="app">
   <p>{{ titulo }}</p>
-  <input type="text" v-bind:value="titulo"
+  <!-- <input type="text" v-bind:value="titulo"
     v-on:input="titulo = $event.target.value" 
-  />
+  /> -->
+  <input type="text" v-model="titulo"/>
   
 </div>
 
@@ -14,5 +15,6 @@
     data: {
       titulo: 'Usando Vue.js'
     }
+    // com a diretiva v-model podemos utilizar o que seria duas diretivas.
   })
 </script>
