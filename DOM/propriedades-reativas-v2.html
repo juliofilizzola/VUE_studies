@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+  <button v-on:click="aumentar">Aumentar</button>
+  <p>Contador: {{ contador }}</p>
+  <p>Resultados: {{ resultados }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      contador: 0,
+      resultados: '',
+    },
+    methods: {
+      aumentar() {
+        this.contador += 1;
+        this.resultados = this.contador >= 5 ? 'Maior ou igual a 5' : 'Menor que 5'
+      }
+    }
+  })
+</script>
