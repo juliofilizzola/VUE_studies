@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+  <p>{{ contador }}</p>
+  <button @click="somar">Somar 1</button>
+  <hr>
+  <input type="text" :value="contador">
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      contador: 0
+    },
+    /*
+    um metodo de sintaxe resumida é bem simples:
+    para o v-on colocamos um @
+    para o v-bind deixamos somente o : antes da propriedade que gostariamos de usar
+    */
+    methods: {
+      somar() {
+        this.contador += 1;
+      }
+    }
+  })
+</script>

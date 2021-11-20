@@ -1,0 +1,60 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<style>
+  .caixa {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .demo {
+    width: 100px; 
+    height: 100px;
+    background: gray;
+  }
+
+  .c1 {
+    background: red;
+  }
+
+  .c2 {
+    background: green;
+  }
+
+  .c3 {
+    background: blue;
+  }
+
+</style>
+
+<div id="app">
+  <div class="caixa">
+
+    <div class="demo" :class="{c1: aplicarC1}"
+      @click="aplicarC1 = !aplicarC1"
+    ></div>
+    <div class="demo" :class="estilo1"
+      @click="aplicarC1 = !aplicarC1"
+    ></div>
+    <div class="demo" :class="[classCSS]"></div>
+  </div>
+  <hr>
+  <input type="text" v-model="classCSS">
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      aplicarC1: false,
+      classCSS: 'C3'
+    },
+    computed: {
+      estilo1() {
+        return {
+          c1: this.aplicarC1,
+          c2: !this.aplicarC1,
+        }
+      }
+    }
+  })
+</script>

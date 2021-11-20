@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+  
+  <p>{{ contador }}</p>
+  <button v-on:click="somar(5, $event)">Somar 1</button>
+  <p v-on:mousemove="getMouseEvent">
+    Mouse: {{x}} e {{y}}
+    <span v-on:mousemove.stop="">PARA AQUI!!!!</span>
+  </p>
+  <a v-on:click.prevent="" href="http://google.com">Google</a>
+  <input  v-on:keyup.enter="alertText" type="text">
+  
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      contador: 0,
+      x: 0,
+      y: 0,
+    },
+    methods: {
+      somar(value, { clientX }) {
+        this.contador += value;
+        console.log(clientX)
+      },
+      getMouseEvent({ clientX, clientY }) {
+        this.x = clientX;
+        this.y = clientY;
+      },
+      alertText() {
+        alert("Esse é um alerta do imput")
+      }
+      // stopMouseEvent(event) {
+      //   event.stopPropagation();
+      // }
+
+      /*
+      Aqui criamos uma função para parar a propagação do evento que acontecia na tag filho.
+      utilizamos o stopPropagation
+
+      mas também utlizanos o stop na diretiva utilizada.
+      o mesmo acontece com o prevent
+      */
+    }
+  })
+</script>
