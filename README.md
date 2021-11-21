@@ -11,7 +11,7 @@ Esse repositório é referente ao curso de vu.js da COD3R.COM [AQUI](https://www
 ### Progresso no curso
 
 - [x] Usando o VUE para interagir com a DOM
-- [ ] Usando Condicionais & Renderização de lista
+- [x] Usando Condicionais & Renderização de lista
 - [ ] Entendendo a instância VUE
 - [ ] Fluxo de desenvolvimento **Real** usando Vue CLI
 - [ ] Introdução aos componentes
